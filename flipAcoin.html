@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1, width=device-width" name="viewport"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta content="Flip a coin, even without actual coins in your wallet !" name="description"/>
+<meta name="keywords" content="Flip a coin, flipper, coin, fun, easy"/>
+<meta name="author" content="Pierre Burton"/>
+<link href="style.css" rel="stylesheet" type="text/css"/>
+<title>Flip a coin !</title>
+</head>
+
+<body>
+<div id="wrapper">
+  <header id="title">
+  	<h1>Flip a coin !</h1>
+    <h2>Like true gentlemen</h2>
+  </header>
+  <section id="result">
+  	<h3>Head or Tail ?</h3>
+    <h4>Heads : <span id="head"></span> / Tails : <span id="tail"></span></h4>
+  </section>
+  <section id="action">
+  	<button name="Flip it" id="flip" type="button">flip</button>
+  </section>
+  <footer id="credits">
+  	<h5>Powered by <a href="http://pierre-burton.be" target="_blank" title="Pierre Burton's portfolio">Pierre Burton</a></h5>
+  </footer>
+</div>
+<script type="text/javascript">
+
+	var html = document.querySelector("html"),
+		wrapper = document.querySelector("#wrapper"),
+		title = document.querySelector("#title"),
+		result = document.querySelector("h3"),
+		heads = document.querySelector("#head"),
+		tails = document.querySelector("#tail"),
+		flipBut = document.querySelector("#flip"),
+		headI = 0,
+		tailI = 0;
+	
+	// Fitting screen size	
+	function fitScreen() {
+		var height = html.offsetHeight,
+			perfectWidth = (height/16)*9;
+			
+		wrapper.style.width = ""+perfectWidth+"px";
+		
+	};
+	fitScreen();
+	
+	window.addEventListener("resize", function() {
+		fitScreen();
+	}, false);
+	
+	// Flip a coin function	
+	flipBut.addEventListener("click", function(){
+		
+		 flip = Math.random().toFixed(2);
+
+		if (flip == 0.00) {
+			result.innerHTML = "Omg ! It is on its edge !";
+		}
+		else if (flip <= 0.50 && flip != 0.00) {
+			tailI++;
+			result.innerHTML = "Tail !";
+			tails.innerHTML = tailI;
+			heads.innerHTML = headI;
+		}
+		else if (flip <= 1.00 && flip >0.50 && flip != 0.00) {
+			headI++;
+			result.innerHTML = "Head !";
+			tails.innerHTML = tailI;
+			heads.innerHTML = headI;
+		};
+		
+	}, false);
+</script>
+</body>
+</html>
