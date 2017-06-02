@@ -10,3 +10,4 @@ Or use it from your browser, who cares !
 * 3D coin from [Jason Hibbs' Codepen](https://codepen.io/jasonhibbs/pen/maskL)
 * Points counter
 * Reset button
+* There's a small chance the coin fall on its edge !
