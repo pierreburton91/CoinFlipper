@@ -5,9 +5,15 @@
 <meta content="initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1, width=device-width" name="viewport"/>
 <meta content="telephone=no" name="format-detection"/>
 <meta content="Flip a coin, even without actual coins in your wallet !" name="description"/>
-<meta name="keywords" content="Flip a coin, flipper, coin, fun, easy"/>
 <meta name="author" content="Pierre Burton"/>
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
 <link href="style.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/png" href="icon.png" />
+<link rel="icon" sizes="192x192" href="icon-w.png" />
+<link rel="apple-touch-icon" href="icon-w.png" />
+<link rel="manifest" href="/manifest.json">
 <title>Flip a coin !</title>
 </head>
 
@@ -42,14 +48,18 @@
 	    </div>
 	  </div>
 	</div>
-    <h4>Heads : <span id="head"></span> / Tails : <span id="tail"></span></h4>
+	<div class="scores">
+    	<h4>Heads : <span id="head">0</span></h4>
+    	<h4>Tails : <span id="tail">0</span></h4>
+    </div>
+    <div class="pop-result"></div>
   </section>
-  <section id="action">
+  <section id="actions">
   	<button name="Flip" id="flip" type="button">flip</button>
   	<button name="Reset" id="reset" type="button">reset</button>
   </section>
   <footer id="credits">
-  	<h5>Powered by <a href="http://pierre-burton.be" target="_blank" title="Pierre Burton">Pierre Burton</a></h5>
+  	<h5>Created by <a href="http://pierre-burton.be" target="_blank" title="Pierre Burton">Pierre Burton</a></h5>
   </footer>
 </div>
 <script type="text/javascript" src="script.js"></script>

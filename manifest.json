@@ -1,0 +1,19 @@
+{
+  "short_name": "Coin Flipper",
+  "name": "Flip a coin !",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "icon-w.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "flipAcoin.html?launcher=true"
+}

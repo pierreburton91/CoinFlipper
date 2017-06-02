@@ -26,9 +26,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 display: block;
 }
-body {
-line-height: 1;
-}
 ol, ul {
 list-style: none;
 }
@@ -40,15 +37,137 @@ q:before, q:after {
 content: '';
 content: none;
 }
-table {
-border-collapse: collapse;
-border-spacing: 0;
-}
 
 /* Own CSS */
-
-
-
+body {
+	font-size: 16px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+	color: #333333;
+}
+#wrapper {
+	height: 100vh;
+	display: flex;
+	flex-flow: column nowrap;
+	overflow-x: hidden;
+}
+#results {
+	flex: 1;
+	position: relative;
+}
+#actions {
+	text-align: center;
+	padding: 24px;
+}
+#credits {
+	text-align: center;
+	padding-bottom: 8px;
+}
+a {
+	text-decoration: none;
+	color: #c52ec1;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+a::-moz-focus-inner {
+  border: 0;
+}
+h1 {
+	font-size: 64px;
+	font-weight: 700;
+	text-align: center;
+	padding: 24px;
+	letter-spacing: 4px;
+	user-select: none;
+}
+.scores {
+	position: absolute;
+	width: 100%;
+	bottom: 24px;
+	left: 0;
+	text-align: center;
+}
+h4 {
+	display: inline-block;
+	margin: 0 16px;
+	padding: 4px 16px;
+	border-radius: 50px;
+	background-color: #c52ec1;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.pop-result {
+	display: none;
+	position: absolute;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 45%;
+    pointer-events: none;
+    font-size: 80px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+}
+.pop-result.pop {
+	display: block;
+	animation: pop 1s ease-in;
+}
+button {
+	display: block;
+	background-image: none;
+	border: none;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+	padding: 8px 32px;
+	font-size: 24px;
+	cursor: pointer;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+	min-width: 200px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 700;
+	border-radius: 8px;
+    margin: 16px auto;
+}
+button::-moz-focus-inner {
+  border: 0;
+}
+#flip {
+    background-color: #5F3C3C;
+    color: #ffffff;
+}
+#flip:hover {
+	background-color: #3f2727;
+}
+#flip:focus {
+	background-color: #4f3030;
+}
+#flip:active {
+	background-color: #2f1d1d;
+}
+#flip:disabled {
+	opacity: 0.5;
+}
+#reset {
+	background: transparent;
+	color: #5F3C3C;
+}
+#reset:hover {
+	color: #3f2727;
+	background-color: #eeeeee;
+}
+#reset:focus {
+	color: #4f3030;
+	background-color: #eeeeee;
+}
+#reset:active {
+	color: #2f1d1d;
+	background-color: #e6e6e6;
+}
 .purse {
   height: 160px;
   width: 160px;
@@ -59,6 +178,8 @@ border-spacing: 0;
   margin-left: -80px;
   perspective: 1000;
   filter: saturate(1.45) hue-rotate(2deg);
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 .purse::after {
     content: "";
@@ -73,6 +194,9 @@ border-spacing: 0;
     border-radius: 100%;
     filter: blur(20px);
     opacity: 0.5;
+}
+.purse::-moz-focus-inner {
+  border: 0;
 }
 .coin {
   height: 160px;
@@ -207,4 +331,86 @@ border-spacing: 0;
 	0% {transform: translateY(0px) rotateX(0deg);}
 	50% {transform: translateY(-100px) rotateX(1665deg);}
 	100% {transform: translateY(0px) rotateX(3330deg);}
+}
+@keyframes pop {
+	100% {transform: scale(1.5); opacity: 0;}
+}
+
+@media only screen and (max-width: 414px) {
+	h1 {
+		font-size: 56px;
+	}
+	#actions {
+		padding: 8px 40px;
+	}
+	button {
+		width: 100%;
+	}
+	.pop-result {
+		top: 40%;
+	}
+	.scores {
+		bottom: 0;
+	}
+}
+@media only screen and (max-width: 320px) {
+	h1 {
+		font-size: 40px;
+		line-height: 1;
+	}
+	#actions {
+		padding: 8px 40px;
+	}
+	.purse {
+		width: 80px;
+		height: 80px;
+		margin-left: -40px;
+		margin-top: -40px;
+	}
+	.purse::after {
+	    width: 60px;
+	    height: 20px;
+	    bottom: -5px;
+	    left: 10px;
+	    filter: blur(10px);
+	    opacity: 0.3;
+	}
+	.coin {
+		width: 80px;
+		height: 80px;
+	}
+	.coin .front, .coin .back {
+	    height: 80px;
+	    width: 80px;
+	}
+	.coin .side {
+		transform: translateX(0px) translateZ(-32px);
+	}
+	.coin .side .spoke {
+	    height: 80px;
+	    width: 80px;
+	}
+	button {
+		width: 100%;
+	}
+	.pop-result {
+		top: 40%;
+		font-size: 40px;
+		text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	}
+	@keyframes head {
+	0% {transform: translateY(0px) rotateX(0deg);}
+	50% {transform: translateY(-80px) rotateX(1710deg);}
+	100% {transform: translateY(0px) rotateX(3420deg);}
+	}
+	@keyframes tail {
+		0% {transform: translateY(0px) rotateX(0deg);}
+		50% {transform: translateY(-80px) rotateX(1620deg);}
+		100% {transform: translateY(0px) rotateX(3240deg);}
+	}
+	@keyframes edge {
+		0% {transform: translateY(0px) rotateX(0deg);}
+		50% {transform: translateY(-80px) rotateX(1665deg);}
+		100% {transform: translateY(0px) rotateX(3330deg);}
+	}
 }
