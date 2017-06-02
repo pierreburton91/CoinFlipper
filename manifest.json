@@ -15,5 +15,5 @@
   ],
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "flipAcoin.html?launcher=true"
+  "start_url": "index.html?launcher=true"
 }
