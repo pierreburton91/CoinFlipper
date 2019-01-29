@@ -1,69 +1,31 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta content="initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1, width=device-width" name="viewport"/>
-<meta content="telephone=no" name="format-detection"/>
-<meta content="Flip a coin, even without actual coins in your wallet !" name="description"/>
-<meta name="author" content="Pierre Burton"/>
-<meta name="msapplication-tap-highlight" content="no">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
-<link href="style.css" rel="stylesheet" type="text/css"/>
-<link rel="icon" type="image/png" href="icon.png" />
-<link rel="icon" sizes="192x192" href="icon-w.png" />
-<link rel="apple-touch-icon" href="icon-w.png" />
-<link rel="manifest" href="/manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<title>Flip a coin !</title>
+	<meta charset="utf-8">
+	<meta content="initial-scale=1, minimum-scale=1, user-scalable=no, maximum-scale=1, width=device-width" name="viewport" />
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="Flip a coin, even without actual coins in your wallet !" name="description" />
+	<meta name="author" content="Pierre Burton" />
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" type="image/png" href="icon.png" />
+	<link rel="icon" sizes="192x192" href="icon-w.png" />
+	<link rel="apple-touch-icon" href="icon-w.png" />
+	<link rel="manifest" href="/manifest.json">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>Flip a coin !</title>
 </head>
 
 <body>
-<div id="wrapper">
-  <header id="title">
-  	<h1>Flip a coin !</h1>
-  </header>
-  <section id="results">
-  	<!-- The Coin -->
-	<div class="purse">
-	  <div class="coin">
-	    <div class="front"></div>
-	    <div class="back"></div>
-	    <div class="side">
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	      <div class="spoke"></div>
-	    </div>
-	  </div>
-	</div>
-	<div class="scores">
-    	<h4>Heads : <span id="head">0</span></h4>
-    	<h4>Tails : <span id="tail">0</span></h4>
-    </div>
-    <div class="pop-result"></div>
-  </section>
-  <section id="actions">
-  	<button name="Flip" id="flip" type="button">flip</button>
-  	<button name="Reset" id="reset" type="button">reset</button>
-  </section>
-  <footer id="credits">
-  	<h5>Created by <a href="http://pierre-burton.be" target="_blank" title="Pierre Burton">Pierre Burton</a></h5>
-  </footer>
-</div>
-<script type="text/javascript" src="script.js"></script>
+	<div id="app"></div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 </body>
+
 </html>
