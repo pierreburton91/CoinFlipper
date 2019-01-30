@@ -39,28 +39,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 	</div>
 	`
 })
-/* <div class="coin">
-		<div class="front"></div>
-		<div class="back"></div>
-		<div class="side">
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-			<div class="spoke"></div>
-		</div>
-	</div> */
+
 const app = new Vue({
 	el: '#app',
 	data: {
@@ -79,15 +58,24 @@ const app = new Vue({
 				const flip = Math.random().toFixed(2);
 				if (flip == 0.00) {
 					this.side = 'Edge';
+					this.edges++;
 				}
 				else if (flip <= 0.50 && flip != 0.00) {
 					this.side = 'Head';
+					this.heads++;
 				}
 				else if (flip <= 1.00 && flip > 0.50 && flip != 0.00) {
 					this.side = 'Tail';
+					this.tails++;
 				}
 				this.flipping = false;
 			}, 1500);
+		},
+		reset() {
+			this.side = null;
+			this.heads = 0;
+			this.tails = 0;
+			this.edges = 0;
 		}
 	},
 	computed: {
@@ -108,7 +96,7 @@ const app = new Vue({
 				<h1>Coin flipper</h1>
 			</div>
 			<div class="col-4 align-self-center">
-				<button name="Reset" id="reset" type="button" class="btn btn-sm btn-light rounded-pill float-right py-1 px-3 text-white">Reset</button>
+				<button @click="reset()" name="Reset" id="reset" type="button" class="btn btn-sm btn-light rounded-pill float-right py-1 px-3 text-white">Reset</button>
 			</div>
 		</header>
 		<section class="row flex-grow-1 align-items-center">
@@ -116,35 +104,35 @@ const app = new Vue({
 				<Coin :pSide="cSide" />
 				<div class="circle-container">
 					<svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg">
-						<circle id="circle" r="90" cx="100" cy="100" fill="transparent"></circle>
+						<circle id="circle" :class="{ flipping: flipping }" r="90" cx="100" cy="100" fill="transparent"></circle>
 					</svg>
 				</div>
 			</div>
 			<template v-if="cSide == null && flipping == false">
-				<div class="col-12 text-center pop-result p-3 text-muted">Ready to flip</div>
+				<div class="col-12 text-center pop-result p-2 p-lg-3 text-muted">Ready to flip</div>
 			</template>
 			<template v-if="cSide == null && flipping == true">
-				<div class="col-12 text-center pop-result p-3 text-muted">Flipping !</div>
+				<div class="col-12 text-center pop-result p-2 p-lg-3 text-muted">Flipping !</div>
 			</template>
 			<template v-if="cSide != null && flipping == false">
-				<div class="col-12 text-center pop-result p-3">{{cSide}}!</div>
+				<div class="col-12 text-center pop-result p-2 p-lg-3">{{cSide}}!</div>
 			</template>
 		</section>
 		<section class="row scores">
-			<div class="col-12 col-lg-4 px-3 pt-3">
-				Heads <span id="head" class="float-right">0</span>
+			<div :class="{ 'score-up': cSide == 'Head'}" class="score col-12 col-lg-4 px-3 pt-3">
+				Heads <span id="head" class="float-right">{{heads}}</span>
 				<div class="d-lg-none border-bottom border-secondary mt-3"></div>
 			</div>
-			<div class="col-12 col-lg-4 px-3 pt-3">
-				Tails <span id="tail" class="float-right">0</span>
+			<div :class="{ 'score-up': cSide == 'Tail'}" class="score col-12 col-lg-4 px-3 pt-3">
+				Tails <span id="tail" class="float-right">{{tails}}</span>
 				<div class="d-lg-none border-bottom border-secondary mt-3"></div>
 			</div>
-			<div class="col-12 col-lg-4 p-3">
-				Edges <span id="edge" class="float-right">0</span>
+			<div :class="{ 'score-up': cSide == 'Edge'}" class="score col-12 col-lg-4 p-3">
+				Edges <span id="edge" class="float-right">{{edges}}</span>
 			</div>
 		</section>
 		<div class="row">
-			<button type="button" class="btn btn-block btn-primary rounded-0" @click="flipTheCoin()">Flip</button>
+			<button type="button" :disabled="flipping" class="btn btn-block btn-primary rounded-0" @click="flipTheCoin()">Flip</button>
 		</div>
 		<footer class="row">
 			<div class="col-7 text-muted">Created by <a href="http://pierre-burton.be" target="_blank" class="text-muted" title="Pierre Burton">Pierre Burton</a></div>
