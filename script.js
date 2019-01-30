@@ -119,20 +119,20 @@ const app = new Vue({
 			</template>
 		</section>
 		<section class="row scores">
-			<div :class="{ 'score-up': cSide == 'Head'}" class="score col-12 col-lg-4 px-3 pt-3">
+			<div :class="{ 'score-up': cSide == 'Head'}" class="score col-12 col-lg-4 px-3 pt-2">
 				Heads <span id="head" class="float-right">{{heads}}</span>
-				<div class="d-lg-none border-bottom border-secondary mt-3"></div>
+				<div class="d-lg-none border-bottom border-secondary mt-2"></div>
 			</div>
-			<div :class="{ 'score-up': cSide == 'Tail'}" class="score col-12 col-lg-4 px-3 pt-3">
+			<div :class="{ 'score-up': cSide == 'Tail'}" class="score col-12 col-lg-4 px-3 pt-2">
 				Tails <span id="tail" class="float-right">{{tails}}</span>
-				<div class="d-lg-none border-bottom border-secondary mt-3"></div>
+				<div class="d-lg-none border-bottom border-secondary mt-2"></div>
 			</div>
-			<div :class="{ 'score-up': cSide == 'Edge'}" class="score col-12 col-lg-4 p-3">
+			<div :class="{ 'score-up': cSide == 'Edge'}" class="score col-12 col-lg-4 px-3 py-2">
 				Edges <span id="edge" class="float-right">{{edges}}</span>
 			</div>
 		</section>
 		<div class="row">
-			<button type="button" :disabled="flipping" class="btn btn-block btn-primary rounded-0" @click="flipTheCoin()">Flip</button>
+			<button type="button" :disabled="flipping" class="btn btn-block btn-primary rounded-0 py-2" @click="flipTheCoin()">Flip</button>
 		</div>
 		<footer class="row">
 			<div class="col-7 text-muted">Created by <a href="http://pierre-burton.be" target="_blank" class="text-muted" title="Pierre Burton">Pierre Burton</a></div>
