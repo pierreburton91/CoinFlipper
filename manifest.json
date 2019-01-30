@@ -17,5 +17,5 @@
   "theme_color": "#232436",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "index.html"
+  "start_url": "index.html?launcher=true"
 }
