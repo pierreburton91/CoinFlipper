@@ -106,7 +106,6 @@ footer {
 	stroke-dasharray: 565.48;
 	stroke: #5468f1;
 	stroke-width: 16px;
-	vector-effect: non-scaling-stroke;
 }
 /* @media (min-width: 992px) {
 	.circle #circle {
