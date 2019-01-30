@@ -7,7 +7,10 @@ Or use it from your browser, who cares !
 **It works !**
 
 ## Included features
-* 3D coin from [Jason Hibbs' Codepen](https://codepen.io/jasonhibbs/pen/maskL)
 * Points counter
 * Reset button
 * There's a small chance the coin falls on its edge !
+
+## Incoming features
+* Points storage
+* Analytics
