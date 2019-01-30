@@ -105,12 +105,7 @@ footer {
 	stroke-dashoffset: 0;
 	stroke-dasharray: 565.48;
 	stroke: #5468f1;
-	stroke-width: 8px;
-}
-@media (min-width: 992px) {
-	.circle #circle {
-		stroke-width: 16px;
-	}
+	stroke-width: 16px;
 }
 .flipping {
 	transform-origin: center;
