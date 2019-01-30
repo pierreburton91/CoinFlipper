@@ -103,7 +103,7 @@ const app = new Vue({
 			<div class="col-12 pt-5 pb-4 p-lg-0 pb-lg-5">
 				<Coin :pSide="cSide" />
 				<div class="circle-container">
-					<svg class="circle" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					<svg class="circle" preserveAspectRatio="xMidYMid meet" version="1.1" xmlns="http://www.w3.org/2000/svg">
 						<circle id="circle" vector-effect="non-scaling-stroke" :class="{ flipping: flipping }" r="90" cx="100" cy="100" fill="transparent"></circle>
 					</svg>
 				</div>
