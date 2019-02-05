@@ -17,5 +17,5 @@
   "theme_color": "#232436",
   "display": "standalone",
   "orientation": "portrait",
-  "start_url": "/index.html?launcher=true"
+  "start_url": "https://pierre-burton.be/CoinFlipper/index.html?launcher=true"
 }
